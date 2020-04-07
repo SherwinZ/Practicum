@@ -92,7 +92,7 @@ df_shock <- function(df, holidays, shift, varname) {
   # the 0 shift need to be adjust (advanced or lagged) because #
   # the date is holiday and the branch does not open ###########
   ##############################################################
-  return(df_step(df, holidays, 0, shift, varname))
+  return(df_step(df, holidays, 1, shift, varname))
 }
 
 df <- df_shock(df,easter,shift,'easter_shock')
