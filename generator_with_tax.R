@@ -20,6 +20,7 @@ df<- read_csv("MFC_Cashbox_Denomination_Totals2014.csv")
 df$EFFDATE<-mdy(df$EFFDATE)
 
 df <- df %>%
+  # selecting branch
   filter(BRANCH_NUMBER == "925DB2345B1534FC5428002D64BFE93DCDCB703285B1A871B6277B4D08BCD2B4") %>%
   select(-BRANCH_NAME, -CASHBOXNBR, -CASHBOXDESC) %>%
   group_by(BRANCH_NUMBER, EFFDATE) %>%
